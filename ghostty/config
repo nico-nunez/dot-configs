@@ -44,7 +44,7 @@
 
 theme = catppuccin-frappe
 background = 000000
-background-opacity = 0.9
+background-opacity = 0.95
 
 cursor-invert-fg-bg = true
 cursor-style = block
