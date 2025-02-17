@@ -7,7 +7,10 @@ return {
     build = "cargo build --release",
 
     opts = {
-      keymap = { preset = "default" },
+      keymap = {
+        preset = "default",
+        ["<C-space>"] = { "accept", "fallback" },
+      },
 
       appearance = {
         use_nvim_cmp_as_default = true,
