@@ -10,6 +10,7 @@ return {
       keymap = {
         preset = "default",
         ["<C-space>"] = { "accept", "fallback" },
+        ["<C-enter>"] = { "accept", "fallback" },
       },
 
       appearance = {

@@ -15,11 +15,11 @@ return {
         pickers = {
           find_files = {
             theme = "ivy",
-            hidden = true,
-            no_ignore = true,
+            find_command = { "rg", "--files", "--iglob", "!.git", "--hidden" },
           },
           git_files = {
             theme = "ivy",
+            show_untracked = true,
           },
           live_grep = {
             theme = "ivy",
