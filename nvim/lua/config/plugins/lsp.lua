@@ -43,6 +43,15 @@ return {
       vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
       vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
 
+      -- Diagnostics
+      vim.keymap.set("n", "<leader>wn", ":lua vim.diagnostic.jump({count=1, float=true})<CR>")
+      vim.keymap.set("n", "<leader>wp", ":lua vim.diagnostic.jump({count=-1, float=true})<CR>")
+      vim.keymap.set("n", "<leader>wf", ":lua vim.diagnostic.open_float()<CR>")
+      vim.keymap.set("n", "<leader>wt", function()
+        local virtual_text = vim.diagnostic.config().virtual_text
+        vim.diagnostic.config({ virtual_text = not virtual_text })
+      end)
+
       vim.api.nvim_create_autocmd("LspAttach", {
         callback = function(args)
           local client = vim.lsp.get_client_by_id(args.data.client_id)
