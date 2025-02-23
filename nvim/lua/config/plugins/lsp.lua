@@ -44,10 +44,10 @@ return {
       vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
 
       -- Diagnostics
-      vim.keymap.set("n", "<leader>wn", ":lua vim.diagnostic.jump({count=1, float=true})<CR>")
-      vim.keymap.set("n", "<leader>wp", ":lua vim.diagnostic.jump({count=-1, float=true})<CR>")
-      vim.keymap.set("n", "<leader>wf", ":lua vim.diagnostic.open_float()<CR>")
-      vim.keymap.set("n", "<leader>wt", function()
+      vim.keymap.set("n", "<leader>xn", ":lua vim.diagnostic.jump({count=1, float=true})<CR>")
+      vim.keymap.set("n", "<leader>xp", ":lua vim.diagnostic.jump({count=-1, float=true})<CR>")
+      vim.keymap.set("n", "<leader>xo", ":lua vim.diagnostic.open_float()<CR>")
+      vim.keymap.set("n", "<leader>xv", function()
         local virtual_text = vim.diagnostic.config().virtual_text
         vim.diagnostic.config({ virtual_text = not virtual_text })
       end)
