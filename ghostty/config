@@ -55,4 +55,4 @@ window-height = 50
 window-width = 150
 
 # Features
-font-feature = "-calt, -liga, -dlig"
+# font-feature = "-calt, -liga, -dlig"
