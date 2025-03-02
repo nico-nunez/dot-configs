@@ -35,7 +35,6 @@ return {
 
       -- Setup ensure installed lsps
       for _, lsp in ipairs(ensure_installed) do
-        -- lspconfig[lsp].setup({})
         lspconfig[lsp].setup({ capabilities = capabilities })
       end
 
@@ -59,6 +58,8 @@ return {
             return
           end
 
+          client.server_capabilities.semanticTokensProvider = nil
+          
           ---@diagnostic disable-next-line: missing-parameter
           if client.supports_method("textDocument/formatting") then
             vim.api.nvim_create_autocmd("BufWritePre", {
