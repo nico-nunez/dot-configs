@@ -58,8 +58,10 @@ return {
             return
           end
 
-          client.server_capabilities.semanticTokensProvider = nil
-          
+          if client.name ~= "ts_ls" then
+            client.server_capabilities.semanticTokensProvider = nil
+          end
+
           ---@diagnostic disable-next-line: missing-parameter
           if client.supports_method("textDocument/formatting") then
             vim.api.nvim_create_autocmd("BufWritePre", {

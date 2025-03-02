@@ -1,6 +1,7 @@
 return {
   {
     "folke/tokyonight.nvim",
+    enabled = false,
     lazy = false,
     priority = 1000,
     config = function()
@@ -23,13 +24,22 @@ return {
   },
   {
     "catppuccin/nvim",
-    enabled = false,
     lazy = false,
     name = "catppuccin",
     priority = 1000,
     config = function()
+      local c = require("config.darkplus.colors")
+      local darkplus = require("config.darkplus.theme")
+
       require("catppuccin").setup({
-        transparent_background = true,
+        flavour = "mocha",
+        transparent_background = false,
+        color_overrides = {
+          mocha = { base = c.bg, crust = c.fg },
+        },
+        custom_highlights = function()
+          return darkplus.base
+        end,
         integrations = {
           native_lsp = {
             enabled = true,
@@ -55,7 +65,17 @@ return {
       })
 
       vim.cmd.colorscheme("catppuccin")
-      vim.api.nvim_set_hl(0, "Normal", { bg = "#1a1a1a" })
+
+      vim.api.nvim_set_hl(0, "@tag", { fg = c.cyan })
+      vim.api.nvim_set_hl(0, "@variable", { fg = c.light_blue })
+      vim.api.nvim_set_hl(0, "@keyword.export", { fg = c.purple })
+      vim.api.nvim_set_hl(0, "@punctuation.bracket", { fg = c.yellow })
+      vim.api.nvim_set_hl(0, "@tag.attribute.tsx", { fg = c.light_blue, italic = true })
+
+      -- Semantic (nil == off; set in lsp.lua)
+      vim.api.nvim_set_hl(0, "@lsp", { fg = c.hint_blue })
+      vim.api.nvim_set_hl(0, "@lsp.type.interface", { fg = c.cyan })
+      vim.api.nvim_set_hl(0, "@lsp.typemod.interface.declaration.typescriptreact", { fg = c.cyan })
     end,
   },
 }
