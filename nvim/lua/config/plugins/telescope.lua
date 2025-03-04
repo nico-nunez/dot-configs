@@ -15,7 +15,8 @@ return {
         pickers = {
           find_files = {
             theme = "ivy",
-            find_command = { "rg", "--files", "--iglob", "!.git", "--hidden" },
+            hidden = true,
+            file_ignore_patterns = { ".git" },
           },
           git_files = {
             theme = "ivy",
