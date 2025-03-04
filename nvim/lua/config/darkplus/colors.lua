@@ -20,7 +20,7 @@ return {
   red = "#F44747",
   light_red = "#D16969",
   orange = "#CE9178",
-  yellow = "#DCDCAA",
+  yellow = "#DCDC9A",
   yellow_orange = "#D7BA7D",
   purple = "#C586C0",
   magenta = "#D16D9E",
