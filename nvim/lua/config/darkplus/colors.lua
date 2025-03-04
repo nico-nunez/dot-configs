@@ -1,6 +1,6 @@
 return {
   fg = "#D0D0D0",
-  bg = "#0A0A0A",
+  bg = "#030303",
   dark = "#252525",
   accent = "#BBBBBB",
   popup_back = "#2D2D30",
@@ -14,6 +14,7 @@ return {
   dark_blue = "#223E55",
   light_blue = "#9CDCFE",
   cyan = "#4EC9B0",
+  dark_cyan = "#4EAAB0",
   green = "#6A9955",
   light_green = "#B5CEA8",
   red = "#F44747",

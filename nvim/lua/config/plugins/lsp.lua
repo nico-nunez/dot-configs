@@ -58,9 +58,9 @@ return {
             return
           end
 
-          if client.name ~= "ts_ls" then
-            client.server_capabilities.semanticTokensProvider = nil
-          end
+          -- if client.name ~= "ts_ls" then
+          client.server_capabilities.semanticTokensProvider = nil
+          -- end
 
           ---@diagnostic disable-next-line: missing-parameter
           if client.supports_method("textDocument/formatting") then
