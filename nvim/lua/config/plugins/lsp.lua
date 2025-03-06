@@ -40,13 +40,15 @@ return {
 
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
       vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
+      vim.keymap.set("n", "gi", vim.lsp.buf.implementation, {})
+      vim.keymap.set("n", "gt", vim.lsp.buf.type_definition, {})
       vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
 
       -- Diagnostics
-      vim.keymap.set("n", "<leader>xn", ":lua vim.diagnostic.jump({count=1, float=true})<CR>")
-      vim.keymap.set("n", "<leader>xp", ":lua vim.diagnostic.jump({count=-1, float=true})<CR>")
-      vim.keymap.set("n", "<leader>xo", ":lua vim.diagnostic.open_float()<CR>")
-      vim.keymap.set("n", "<leader>xv", function()
+      vim.keymap.set("n", "<leader>dn", ":lua vim.diagnostic.jump({count=1, float=true})<CR>")
+      vim.keymap.set("n", "<leader>dp", ":lua vim.diagnostic.jump({count=-1, float=true})<CR>")
+      vim.keymap.set("n", "<leader>do", ":lua vim.diagnostic.open_float()<CR>")
+      vim.keymap.set("n", "<leader>dv", function()
         local virtual_text = vim.diagnostic.config().virtual_text
         vim.diagnostic.config({ virtual_text = not virtual_text })
       end)
