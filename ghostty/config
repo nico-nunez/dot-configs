@@ -44,8 +44,8 @@ keybind = ctrl+enter=unbind
 # resize-overlay-duration = 4s 200ms
 
 theme = catppuccin-frappe
-background = 000000
-background-opacity = 0.95
+background = 0D0D0D
+background-opacity = 0.99
 
 cursor-invert-fg-bg = true
 cursor-style = block

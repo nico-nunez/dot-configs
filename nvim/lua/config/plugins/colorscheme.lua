@@ -66,6 +66,9 @@ return {
 
       vim.cmd.colorscheme("catppuccin")
 
+      vim.api.nvim_set_hl(0, "CurSearch", { undercurl = true })
+      vim.api.nvim_set_hl(0, "Search", { bg = "none", undercurl = true })
+
       vim.api.nvim_set_hl(0, "@tag", { fg = c.cyan })
       vim.api.nvim_set_hl(0, "@variable", { fg = c.light_blue })
       vim.api.nvim_set_hl(0, "@keyword.export", { fg = c.purple })

@@ -45,6 +45,7 @@ return {
       vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
 
       -- Diagnostics
+      vim.diagnostic.config({ virtual_text = false })
       vim.keymap.set("n", "<leader>dn", ":lua vim.diagnostic.jump({count=1, float=true})<CR>")
       vim.keymap.set("n", "<leader>dp", ":lua vim.diagnostic.jump({count=-1, float=true})<CR>")
       vim.keymap.set("n", "<leader>do", ":lua vim.diagnostic.open_float()<CR>")

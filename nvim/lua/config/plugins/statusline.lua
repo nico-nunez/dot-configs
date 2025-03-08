@@ -1,21 +1,21 @@
 return {
   {
-    'echasnovski/mini.nvim',
+    "echasnovski/mini.nvim",
     enabled = false,
     config = function()
-      local statusline = require 'mini.statusline'
-      statusline.setup {use_icons = true }
-    end
+      local statusline = require("mini.statusline")
+      statusline.setup({ use_icons = true })
+    end,
   },
   {
-    'nvim-lualine/lualine.nvim',
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    "nvim-lualine/lualine.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
-      require('lualine').setup({
+      require("lualine").setup({
         options = {
-          theme = 'dracula'
-        }
+          theme = "codedark",
+        },
       })
-    end
-  }
+    end,
+  },
 }
