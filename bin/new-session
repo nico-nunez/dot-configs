@@ -4,22 +4,19 @@
 w_flag=1
 p_flag=0
 
-session=""
 path=$(pwd)
-
-s=$(echo $path | cut -d'/' -f -1)
-
-echo $path
-echo $s
-
-exit
+session=$(echo $path | rev | cut -d'/' -f -1 | rev )
 
 print_usage() {
-  printf "Usage: ..."
+  printf "Usage: ...TODO\n"
+}
+
+print_existing() {
+  printf "Exiting new session.\n"
 }
 
 # Get option values
-while getopts 'w:s:' flag; do
+while getopts 'w:s:p:' flag; do
   case "${flag}" in
     w) w_flag=${OPTARG} ;;
     p) p_flag=${OPTARG} ;;
@@ -31,15 +28,27 @@ done
 
 ALREADYEXITS=$(tmux list-sessions | grep $session)
 
-if [ "$ALREADYEXITS" = "" ]
+if [ "$ALREADYEXITS" != "" ]
 then
+  # Prompt user whether or not to attach to existing session
+  echo "Existing session: [$ALREADYEXITS]"
+  read -p "Attach to this session (y/n): " attach_existing
+  
+  case $attach_existing in
+    y) ;;
+    Y) ;;
+    *) print_existing
+       exit 1 ;; 
+  esac
+
+else
   tmux new-session -d -s $session
 
   # Create and name main window
   tmux rename-window -t 1 'Nvim'
 
   # Open Neovim in main window
-  tmux send-keys -t $SESSION:1.1 "nvim" C-m
+  tmux send-keys -t $session:1.1 "nvim" C-m
 
   # Create N windows
   for (( i = 1; i < $w_flag; i++ ))
@@ -55,6 +64,11 @@ then
   # Set layout
   tmux select-layout main-vertical
 
+fi
+
+if [ "$p_flag" -gt "0" ]; 
+then
+tmux send-keys -t$session:1.$p_flag "clear" C-m
 fi
 
 tmux attach-session -t $SESSION:1.1
