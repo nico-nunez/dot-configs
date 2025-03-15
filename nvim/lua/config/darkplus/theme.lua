@@ -265,7 +265,7 @@ M.base = {
   NvimTreeGitStaged = { fg = c.diff_add },
   NvimTreeImageFile = { fg = c.purple },
   NvimTreeIndentMarker = { fg = c.gray },
-  NvimTreeNormal = { fg = c.accent, bg = c.dark },
+  NeoTreeNormal = { fg = c.fg, bg = c.bg_lighter },
   NvimTreeOpenedFolderName = { fg = c.blue, style = { "italic" } },
   NvimTreeRootFolder = { fg = c.gray, style = { "bold" } },
   NvimTreeSpecialFile = { fg = c.orange },
