@@ -22,3 +22,7 @@ set.signcolumn = "yes"
 
 -- Opens new vertical window to the right
 set.splitright = true
+
+set.updatetime = 250
+
+set.timeoutlen = 300

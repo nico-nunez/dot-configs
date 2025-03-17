@@ -20,7 +20,7 @@ keymap("n", "n", "nzzzv")
 keymap("n", "N", "Nzzzv")
 
 -- Clear search highlighting
-keymap("n", "<leader>rh", ":noh<CR>")
+keymap("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 -- Toggle 'smartcase' sensitivity
 keymap("n", "<leader>scs", function()
