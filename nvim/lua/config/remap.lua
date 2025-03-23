@@ -38,3 +38,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     vim.highlight.on_yank()
   end,
 })
+
+keymap("n", "<leader>bn", "<cmd>bnext<CR>", { desc = "Go to next buffer" })
+keymap("n", "<leader>bp", "<cmd>bprevious<CR>", { desc = "Go to previous buffer" })
