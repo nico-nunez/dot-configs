@@ -37,6 +37,15 @@ return {
       vim.keymap.set("n", "<leader>ff", builtin.find_files)
       vim.keymap.set("n", "<leader>fp", builtin.git_files)
       vim.keymap.set("n", "<leader>lg", builtin.live_grep)
+
+      -- Search nvim configs
+      vim.keymap.set("n", "<leader>en", function()
+        require("telescope.builtin").find_files({
+          cwd = vim.fn.stdpath("config"),
+        })
+      end)
+
+      -- Search installed plugins
       vim.keymap.set("n", "<leader>ep", function()
         builtin.find_files({
           cwd = vim.fs.joinpath(vim.fn.stdpath("data"), "lazy"),
