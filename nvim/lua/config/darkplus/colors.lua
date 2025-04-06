@@ -18,6 +18,7 @@ return {
   dark_cyan = "#4EAA99",
   green = "#6A9955",
   light_green = "#B5CEA8",
+  lighter_green = "#26BD74",
   red = "#F44747",
   light_red = "#D16969",
   orange = "#CE9178",

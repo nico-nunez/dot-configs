@@ -101,7 +101,7 @@ M.base = {
   TermCursorNC = { fg = c.cursor_fg, bg = c.cursor_bg },
   Title = { fg = c.blue, style = { "bold" } },
   Todo = { fg = c.red, bg = c.bg, style = { "bold" } },
-  Type = { fg = c.dark_cyan },
+  Type = { fg = c.lighter_green },
   Typedef = { fg = c.purple },
   Variable = { fg = c.light_blue },
   VertSplit = { fg = c.bg, bg = c.dark },

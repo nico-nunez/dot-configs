@@ -73,7 +73,7 @@ return {
       vim.api.nvim_set_hl(0, "@variable", { fg = c.light_blue })
       vim.api.nvim_set_hl(0, "@keyword.export", { fg = c.purple })
       vim.api.nvim_set_hl(0, "@keyword.report", { fg = c.purple })
-      vim.api.nvim_set_hl(0, "@type.builtin", { fg = c.dark_cyan })
+      vim.api.nvim_set_hl(0, "@type.builtin", { fg = c.lighter_green })
       vim.api.nvim_set_hl(0, "@constant.builtin", { fg = c.purple })
       vim.api.nvim_set_hl(0, "@punctuation.bracket", { fg = c.yellow })
       vim.api.nvim_set_hl(0, "@variable.member", { fg = c.light_blue })
