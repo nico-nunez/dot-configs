@@ -9,11 +9,20 @@ return {
       -- {"3rd/image.nvim", opts = {}}, -- Optional image support in preview window: See `# Preview Mode` for more information
     },
     config = function()
-     vim.keymap.set("n", "<leader>/", ":Neotree toggle reveal right<CR>")
+      require("neo-tree").setup({
+        filesystem = {
+          filtered_items = {
+            visible = true,
+            -- hide_dotfiles = false,
+            hide_gitignored = true,
+          },
+        },
+      })
+      vim.keymap.set("n", "<leader>/", ":Neotree toggle reveal right<CR>")
       --nnoremap | :Neotree reveal<cr>
       --nnoremap gd :Neotree float reveal_file=<cfile> reveal_force_cwd<cr>
       --nnoremap <leader>b :Neotree toggle show buffers right<cr>
       --nnoremap <leader>s :Neotree float git_status<cr>
-    end
-  }
+    end,
+  },
 }

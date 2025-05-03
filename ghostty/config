@@ -43,9 +43,10 @@ keybind = ctrl+enter=unbind
 # # Just for example:
 # resize-overlay-duration = 4s 200ms
 
-theme = catppuccin-frappe
+theme = Chalkboard
+#font-size = 15
 background = 0D0D0D
-background-opacity = 0.99
+#background-opacity = 0.99
 
 cursor-invert-fg-bg = true
 cursor-style = block

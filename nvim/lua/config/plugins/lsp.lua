@@ -1,4 +1,4 @@
-local ensure_installed = { "lua_ls", "ts_ls", "eslint", "gopls" }
+local ensure_installed = { "lua_ls", "ts_ls", "eslint", "gopls", "tailwindcss", "pyright" }
 
 return {
   {

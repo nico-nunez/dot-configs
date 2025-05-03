@@ -35,7 +35,7 @@ return {
         flavour = "mocha",
         transparent_background = false,
         color_overrides = {
-          mocha = { base = c.bg, crust = c.fg },
+          -- mocha = { base = c.bg, crust = c.fg },
         },
         custom_highlights = function()
           return darkplus.base
@@ -66,8 +66,10 @@ return {
 
       vim.cmd.colorscheme("catppuccin")
 
+      vim.api.nvim_set_hl(0, "Normal", { bg = "#1a1a1a" })
+      vim.api.nvim_set_hl(0, "SignColumn", { bg = "#1a1a1a" })
       vim.api.nvim_set_hl(0, "CurSearch", { undercurl = true })
-      vim.api.nvim_set_hl(0, "Search", { bg = "none", undercurl = true })
+      vim.api.nvim_set_hl(0, "Search", { bg = "#1a1a1a", undercurl = true })
 
       vim.api.nvim_set_hl(0, "@tag", { fg = c.cyan })
       vim.api.nvim_set_hl(0, "@variable", { fg = c.light_blue })

@@ -14,16 +14,17 @@ return {
       telescope.setup({
         pickers = {
           find_files = {
-            theme = "ivy",
+            -- theme = "ivy",
             hidden = true,
             file_ignore_patterns = { ".git" },
+            no_ignore = true,
           },
           git_files = {
-            theme = "ivy",
+            -- theme = "ivy",
             show_untracked = true,
           },
           live_grep = {
-            theme = "ivy",
+            -- theme = "ivy",
           },
         },
         extensions = {
@@ -36,6 +37,8 @@ return {
       vim.keymap.set("n", "<leader>fh", builtin.help_tags)
       vim.keymap.set("n", "<leader>ff", builtin.find_files)
       vim.keymap.set("n", "<leader>fp", builtin.git_files)
+      vim.keymap.set("n", "<leader>fd", builtin.diagnostics)
+      vim.keymap.set("n", "<leader>fb", builtin.buffers)
       vim.keymap.set("n", "<leader>lg", builtin.live_grep)
 
       -- Search nvim configs
