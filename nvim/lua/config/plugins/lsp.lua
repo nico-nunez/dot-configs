@@ -1,4 +1,4 @@
-local ensure_installed = { "lua_ls", "ts_ls", "eslint", "gopls", "tailwindcss", "pyright" }
+local ensure_installed = { "lua_ls", "ts_ls", "eslint", "gopls", "tailwindcss", "pyright", "html", "clangd" }
 
 return {
   {
@@ -30,12 +30,17 @@ return {
       },
     },
     config = function()
-      local lspconfig = require("lspconfig")
       local capabilities = require("blink.cmp").get_lsp_capabilities()
+      local lspconfig_configs = require("lspconfig.configs")
 
-      -- Setup ensure installed lsps
       for _, lsp in ipairs(ensure_installed) do
-        lspconfig[lsp].setup({ capabilities = capabilities })
+        -- Copy lspconfig's well-tested defaults into vim.lsp.config
+        if lspconfig_configs[lsp] then
+          vim.lsp.config[lsp] = vim.tbl_deep_extend("force",
+            lspconfig_configs[lsp].default_config,
+            { capabilities = capabilities }
+          )
+        end
       end
 
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})

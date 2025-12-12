@@ -57,3 +57,4 @@ window-width = 150
 
 # Features
 # font-feature = "-calt, -liga, -dlig"
+keybind = shift+enter=text:\n
