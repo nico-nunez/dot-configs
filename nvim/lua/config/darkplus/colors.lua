@@ -1,7 +1,10 @@
 return {
   fg = "#D0D0D0",
   bg = "#0D0D0D",
+  bg_fav = "#1A1A1A",
   bg_lighter = "#1D1D1D",
+  bg_even_lighter = "#202020",
+  bg_even_lighter_nc = "#2A2A2A",
   dark = "#252525",
   accent = "#BBBBBB",
   popup_back = "#2D2D30",

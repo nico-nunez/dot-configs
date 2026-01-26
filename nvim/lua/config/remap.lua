@@ -2,6 +2,8 @@ local keymap = vim.keymap.set
 
 vim.g.mapleader = " "
 
+keymap("i", "<C-c>", "<Esc>")
+
 keymap("n", "<leader>fe", vim.cmd.Ex)
 keymap("n", "<leader>new", vim.cmd.vnew)
 keymap("n", "<leader>tab", "<C-w><S-t>")
