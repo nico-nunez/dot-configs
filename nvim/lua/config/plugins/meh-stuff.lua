@@ -1,10 +1,13 @@
-return {
-  {
-    -- dir = "~/dev/nvim-plugins/remind-meh",
-    -- name = "remind-meh",
-    "nico-nunez/remind-meh.nvim",
-    config = function()
-      require("remind-meh").setup()
-    end,
-  }
-}
+return {}
+-- return {
+--   {
+--     dir = "~/dev/nvim-plugins/remind-meh",
+--     name = "remind-meh",
+--     --"nico-nunez/remind-meh.nvim",
+--     config = function()
+--       require("remind-meh").setup({
+--         exclude_dirs = { "deps" },
+--       })
+--     end,
+--   }
+-- }

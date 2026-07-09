@@ -18,6 +18,7 @@ return {
             hidden = true,
             file_ignore_patterns = { ".git" },
             no_ignore = true,
+            follow = true,
           },
           git_files = {
             -- theme = "ivy",

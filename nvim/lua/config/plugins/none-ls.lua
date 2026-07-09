@@ -11,6 +11,10 @@ return {
           -- null_ls.builtins.formatting.stylua,
           null_ls.builtins.formatting.black,
           null_ls.builtins.formatting.prettierd,
+
+          null_ls.builtins.formatting.swiftformat,
+          null_ls.builtins.diagnostics.swiftlint,
+
           -- null_ls.builtins.formatting.clang_format,
           require("none-ls.diagnostics.eslint"),
         },

@@ -23,7 +23,7 @@ return {
         sync_install = false,
 
         auto_install = true,
-        ignore_install = { "c", "rust" },
+        ignore_install = { "c", "rust", "swift" },
         highlight = {
           enable = true,
         },
