@@ -1,32 +1,51 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
+    branch = "main",
     build = ":TSUpdate",
     config = function()
-      local config = require("nvim-treesitter.configs")
-      config.setup({
-        -- A list of parser names, or "all" (the listed parsers MUST always be installed)
-        ensure_installed = {
-          "c",
-          "lua",
-          "javascript",
-          "typescript",
-          "go",
-          "vim",
-          "vimdoc",
-          "query",
-          "markdown",
-          "markdown_inline",
-        },
+      local ensure_installed = {
+        "bash",
+        "c",
+        "cpp",
+        "css",
+        "dockerfile",
+        "editorconfig",
+        "git_config",
+        "gitignore",
+        "go",
+        "gomod",
+        "html",
+        "javascript",
+        "json",
+        "lua",
+        "make",
+        "markdown",
+        "markdown_inline",
+        "python",
+        "query",
+        "ssh_config",
+        "swift",
+        "tmux",
+        "toml",
+        "tsx",
+        "typescript",
+        "vim",
+        "vimdoc",
+        "xml",
+        "yaml",
+        "zig",
+      }
 
-        -- Install parsers synchronously (only applied to `ensure_installed`)
-        sync_install = false,
+      require("nvim-treesitter").install(ensure_installed)
 
-        auto_install = true,
-        ignore_install = { "c", "rust", "swift" },
-        highlight = {
-          enable = true,
-        },
+      vim.api.nvim_create_autocmd("FileType", {
+        callback = function(args)
+          local lang = vim.treesitter.language.get_lang(args.match) or args.match
+          if vim.treesitter.language.add(lang) then
+            vim.treesitter.start()
+          end
+        end,
       })
     end,
   },
